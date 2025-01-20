@@ -10,7 +10,7 @@
 
  <body>
      <a href="{{ route('tasks.index') }}">戻る</a>
-     <h1>タスク登録</h1>
+     <h1>新規タスク登録</h1>
      <form action="{{ route('tasks.store') }}" method="post">
      @csrf
          <p>
