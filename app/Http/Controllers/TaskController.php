@@ -43,7 +43,7 @@ class TaskController extends Controller
     // showページへ移動
     public function show($id)
     {
-        $task = task::find($id);
+        $task = Task::find($id);
         return view('tasks.show', ['task' => $task]);
     }
 

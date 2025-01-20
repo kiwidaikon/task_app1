@@ -37,6 +37,7 @@
          </p>
  
          <input type="submit" value="更新">
+         <button onclick='location.href="{{ route("tasks.update", $task) }}"'>詳細へ戻る</button>
      </form>
  </body>
  </html>
