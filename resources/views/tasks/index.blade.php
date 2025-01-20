@@ -12,7 +12,11 @@
      <ul>
          @foreach ($tasks as $task)
              <!-- // リンク先をidで取得し名前で出力 -->
-             <li><a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a></li>
+             <li><a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
+             @method('DELETE')
+             <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
+             
+             </li>
          @endforeach
      </ul>
 
