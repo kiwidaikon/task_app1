@@ -9,12 +9,13 @@
  </head>
 
  <body>
-     <a href="{{ route('tasks.index') }}">戻る</a>
+     {{-- 後で消す<a href="{{ route('tasks.index') }}">戻る</a> --}}
      <h1>{{ $task->title }}</h1>
      <p>{!! nl2br(e($task->body)) !!}</p>
 
      <div class="button-group">
          <!-- $memoのidを元に編集ページへ遷移する -->
+         <button onclick='location.href="{{ route("tasks.index", $task) }}"'>一覧へ戻る</button>
          <button onclick='location.href="{{ route("tasks.edit", $task) }}"'>編集する</button>
          <form action="{{ route('tasks.destroy', $task) }}" method="post">
              @csrf

@@ -36,7 +36,7 @@
              <textarea name="body" class="body" id="body">{{ old('body') }}</textarea>
          </p>
 
-         <input type="submit" value="登録">
+         <input type="submit" value="Create Task">
      </form>
  </body>
 
