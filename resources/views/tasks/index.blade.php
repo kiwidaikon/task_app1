@@ -11,17 +11,17 @@
  <body>
 
      <h1>タスク一覧</h1>
-     
-         @foreach ($tasks as $task)
-             <!-- // リンク先をidで取得し名前で出力 -->
-             <li><a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
+
+     @foreach ($tasks as $task)
+         <!-- // リンク先をidで取得し名前で出力 -->
+         <li><a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
              @method('DELETE')
              <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
-             
-             </li>
-         @endforeach
 
-<hr>
+         </li>
+     @endforeach
+
+     <hr>
 
      <h1>新規タスク登録</h1>
 
@@ -37,9 +37,9 @@
              </ul>
          </div>
      @endif
- 
+
      <form action="{{ route('tasks.store') }}" method="post">
-     @csrf
+         @csrf
          <p>
              <label for="title">タイトル</label><br>
              <input type="text" name="title" id="title" value="{{ old('title') }}">
@@ -53,4 +53,4 @@
      </form>
  </body>
 
-</html>
+ </html>

@@ -24,9 +24,9 @@
              </ul>
          </div>
      @endif
- 
+
      <form action="{{ route('tasks.store') }}" method="post">
-     @csrf
+         @csrf
          <p>
              <label for="title">タイトル</label><br>
              <input type="text" name="title" id="title" value="{{ old('title') }}">
