@@ -9,8 +9,8 @@
  </head>
 
  <body>
-     {{-- 後で消す<a href="{{ route('tasks.index') }}">戻る</a> --}}
-     <h1>{{ $task->title }}</h1>
+     <h1 class="text1">タスク詳細</h1>
+     <p>{{ $task->title }}</p>
      <p>{!! nl2br(e($task->body)) !!}</p>
 
      <div class="button-group">
