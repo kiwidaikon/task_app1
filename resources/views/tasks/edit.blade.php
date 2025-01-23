@@ -9,21 +9,6 @@
  </head>
 
  <body>
-
-     {{-- indexと同じようにここを追加するとエラーになりました。 --}}
-     <h1>タスク一覧</h1>
-
-     @foreach ($tasks as $task)
-         <!-- // リンク先をidで取得し名前で出力 -->
-         <li><a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
-             @method('DELETE')
-             <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
-
-         </li>
-     @endforeach
-
-     <hr>
-
      <h1>タスク編集</h1>
 
      @if ($errors->any())

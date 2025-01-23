@@ -14,11 +14,15 @@
 
      @foreach ($tasks as $task)
          <!-- // リンク先をidで取得し名前で出力 -->
-         <li><a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
-             @method('DELETE')
-             <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
+         <div class="button-group">
 
-         </li>
+             <a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
+             <form action="{{ route('tasks.destroy', $task) }}" method='POST'>
+                 @csrf
+                 @method('DELETE')
+                 <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
+             </form>
+         </div>
      @endforeach
 
      <hr>
